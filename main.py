@@ -44,10 +44,11 @@ def main(token:str,channel_id:str,path:str):
     
     basename = os.path.basename(path)
     
+    #https://qiita.com/ABBBB/items/e6bdf7fc94b8f6f72a01#添付ファイルだけ
     with open(path, 'rb') as f:
         file_bin = f.read()
-
-    files_qiita = {
+    
+    files_data = {
         "favicon" : ( basename, file_bin),
     }
     payload = {
@@ -55,7 +56,7 @@ def main(token:str,channel_id:str,path:str):
     }
 
 
-    response = requests.post(f'https://discord.com/api/v9/channels/{channel_id}/messages',headers=headers, data=payload,files=files_qiita)
+    response = requests.post(f'https://discord.com/api/v9/channels/{channel_id}/messages',headers=headers, data=payload,files=files_data)
     return(response.json()["attachments"][0]["url"])
 
 

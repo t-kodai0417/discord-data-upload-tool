@@ -12,7 +12,7 @@ block_cipher = None
 
 
 a = Analysis(
-    ['C:\\Users\\user\\OneDrive\\デスクトップ\\test.py'],
+    ['test.py'],
     pathex=[],
     binaries=binaries,
     datas=datas,

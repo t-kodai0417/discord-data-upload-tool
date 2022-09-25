@@ -12,7 +12,7 @@ block_cipher = None
 
 
 a = Analysis(
-    ['test.py'],
+    ['main.py'],
     pathex=[],
     binaries=binaries,
     datas=datas,
@@ -35,7 +35,7 @@ exe = EXE(
     a.zipfiles,
     a.datas,
     [],
-    name='test',
+    name='main',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
